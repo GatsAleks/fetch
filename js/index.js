@@ -7,6 +7,8 @@ document.querySelector('.fetch-json')
 async function fetchJson() {
     const response = await fetch('client-data.json');
     const clientData = await response.json();
-    document.querySelector('.client-name').innerText = clientData.name;
-    document.querySelector('.account-balance').innerText = clientData.balance;
+    let indx = Math.floor(Math.random() * Math.floor(clientData.length));
+    document.querySelector('.client-name').innerText = clientData[indx].name;
+    document.querySelector('.client-secondName').innerText = clientData[indx].secondName;
+    document.querySelector('.feedback').innerText = clientData[indx].feedback;
 }
